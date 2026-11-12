@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row-head">
+    <h1>Моя полиця</h1>
+    <a class="btn" href="{{ url_for('books.add') }}">+ Додати книгу</a>
+</div>
+
+{% if books %}
+<div class="table-wrap">
+    <table class="books">
+        <thead>
+            <tr><th>Назва</th><th>Автор</th><th>Статус</th><th></th></tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td><span class="badge badge-{{ book.status }}">{{ book.status_label }}</span></td>
+                <td class="actions">
+                    <a href="{{ url_for('books.edit', book_id=book.id) }}">Редагувати</a>
+                    <form method="post" action="{{ url_for('books.delete', book_id=book.id) }}" class="inline"
+                          onsubmit="return confirm('Видалити книгу?');">
+                        <button type="submit" class="link-btn danger">Видалити</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<p class="empty">На полиці поки порожньо. Додайте першу книгу!</p>
+{% endif %}
+{% endblock %}

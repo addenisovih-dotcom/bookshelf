@@ -1,0 +1,272 @@
+:root {
+    --bg: #f3f0ea;
+    --card: #ffffff;
+    --text: #1f2a2e;
+    --accent: #1f6f6b;
+    --accent-dark: #164e4b;
+    --muted: #6b777a;
+    --danger: #b3382c;
+    --border: #e1dccf;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+a {
+    color: var(--accent);
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 24px;
+    background: var(--accent-dark);
+    color: #fff;
+}
+
+.topbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 16px;
+}
+
+.brand {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-left: 0 !important;
+}
+
+.who {
+    opacity: 0.85;
+}
+
+.container {
+    flex: 1;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.narrow {
+    max-width: 420px;
+    margin: 24px auto;
+}
+
+h1 {
+    margin-top: 0;
+    color: var(--accent-dark);
+}
+
+label {
+    display: block;
+    margin: 14px 0 4px;
+    font-weight: 600;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--accent);
+    border-color: var(--accent);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--accent-dark);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.btn-ghost:hover {
+    background: var(--bg);
+}
+
+.hint {
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+.flash {
+    background: #e3f1ef;
+    border: 1px solid var(--accent);
+    border-left-width: 5px;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+}
+
+.row-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.row-head .btn {
+    margin-top: 0;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.books {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.books th,
+.books td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.books th {
+    background: #ebe6da;
+}
+
+.actions {
+    white-space: nowrap;
+}
+
+.badge {
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    background: #eee;
+}
+
+.badge-want {
+    background: #fdebc8;
+}
+
+.badge-reading {
+    background: #d6e8f7;
+}
+
+.badge-done {
+    background: #d5ecd4;
+}
+
+.empty {
+    color: var(--muted);
+    text-align: center;
+    padding: 40px 0;
+}
+
+form.inline {
+    display: inline;
+    margin: 0;
+}
+
+.link-btn {
+    background: none;
+    border: 0;
+    padding: 0;
+    margin-left: 12px;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.topbar .link-btn {
+    color: #fff;
+}
+
+.link-btn.danger {
+    color: var(--danger);
+}
+
+.footer {
+    text-align: center;
+    padding: 16px;
+    color: var(--muted);
+}
+
+.footer p {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .topbar {
+        padding: 12px 16px;
+    }
+
+    .container {
+        padding: 16px 12px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    .books th,
+    .books td {
+        padding: 10px 8px;
+        font-size: 0.95rem;
+    }
+}
+
+label.check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+}
+
+label.check input {
+    width: auto;
+}

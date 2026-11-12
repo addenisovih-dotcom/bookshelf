@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Реєстрація — BookShelf{% endblock %}
+
+{% block content %}
+<section class="card narrow">
+    <h1>Реєстрація</h1>
+
+    <form method="post" action="{{ url_for('auth.register') }}">
+        <label for="username">Ім'я користувача</label>
+        <input type="text" id="username" name="username"
+               maxlength="50" {% if is_required %}required{% endif %} autofocus autocomplete="username">
+
+        <label for="password">Пароль</label>
+        <input type="password" id="password" name="password"
+               {% if is_required %}required{% endif %} autocomplete="new-password">
+
+        <button type="submit" class="btn">Зареєструватися</button>
+    </form>
+
+    <p class="hint">Вже є акаунт? <a href="{{ url_for('auth.login') }}">Увійти</a></p>
+</section>
+{% endblock %}
